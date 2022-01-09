@@ -1,2 +1,2 @@
 # jm5
-A library for JavaScript. (coming soon)
+A library for JavaScript.
