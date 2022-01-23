@@ -3,7 +3,7 @@
 ### How to import jM5?
 Paste this code to your HTML project:
 ```html
-<script src="https://github.com/VBPROGER/jm5/blob/main/1.0.0/CODE-MINIFIED.js"></script>
+<script src="https://raw.githubusercontent.com/VBPROGER/jm5/main/1.0.0/CODE-MINIFIED.js"></script>
 ```
 ### How to use jM5?
 Prefix of jM5 is "`jm5`".
