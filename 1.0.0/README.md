@@ -10,6 +10,7 @@ Prefix of jM5 is "`jm5`".
 Example (paste this in developer console):
 ```javascript
 jm5.removenewlines('New lines will be removed!\n\nYes, they will.')
+// this script will remove all new lines from the string or variable or etc.
 ```
 Output:
 ```javascript
@@ -18,6 +19,6 @@ Output:
 ### Script examples
 You can try pasting these scripts in your HTML code.
 ```javascript
-jm5.version() # display version of jM5
+jm5.version() // display version of jM5
 ```
 ### More answers coming soon...
