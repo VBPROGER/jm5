@@ -1,4 +1,4 @@
-// jM5
+// jM5 1.0.1
 
 /*********************/
 /*                   */
@@ -6,7 +6,7 @@
 /*                   */
 /*********************/
 
-class __jm5__{
+jm5 = class jm5class{
 
     name = "jM5"
     version = "1.0.1"
@@ -48,32 +48,18 @@ class __jm5__{
     xmlHttp.send( null );
     return xmlHttp.responseText;
     }
-    BETA_devtools(){
-    var status = ""
-    status = "False";
-    if ((window.outerHeight - window.innerHeight) > 100) {
-        status = "True"
-    }
-    return status
+    devtools(){
+        return (window.outerHeight - window.innerHeight) > 100)
     }
     removenewlines(string){
-        var string = string.replace('\n', '').trim();
-        return string
+        return string.replace('\n', '').trim();
     }
-    tryhistoryadd(url){
-    var title = ''
-    var add_URL = chrome.history.pushState(url)
-    return "True"
+    pushstate(url){
+    return chrome.history.pushState(url)
     }
     islocal(){
-    var PROTOCOL = location.protocol
-    if (PROTOCOL == 'file:'){
-        return "True"
-    } else if (PROTOCOL == 'localhost:'){
-        return "True"
-    } else {
-        return "False"
-    }
+    var proto = location.protocol
+    proto == 'file:')
     }
     isstringequalstostring(string1, string2){
     if (string1 == string2) {
@@ -82,30 +68,17 @@ class __jm5__{
             return "False"
         }
     }
-    isstringnotequalstostring(string1, string2){
-    if (string1 != string2) {
-            return "True"
-        } else {
-            return "False"
-        }
+    string_eq(string1, string2){
+    return (string1 === string2)
     }
-    isvaluebiggerthanvalue(int1, int2){
-    if (int1 > int2){
-        return "True"
-    } else{
-        return "False"
+    int_greater(int1, int2){
+    return (int1 > int2)
     }
+    is_not_greater(int1, int2){
+    return (int1 < int2)
     }
-    isvaluesmallerthanvalue(int1, int2){
-    if (int1 < int2){
-            return "True"
-        } else{
-            return "False"
-        }
-    }
-    trygetbrowserusername(){
-        var NAME = sessionStorage.getItem("SessionName")
-        return NAME
+    session_name(){
+        return sessionStorage.getItem("SessionName")
     }
     protocol_get(){
         var PROTOCOL = location.protocol
@@ -159,17 +132,16 @@ class __jm5__{
         var VERSION = ""
         var ISUPTODATE = this.__isuptodate__()
         var VERSION = this.version
-        if (ISUPTODATE == "False") {
+        if (!ISUPTODATE) {
             this.__warn__('outdated jm5 version: updating')
             this.__log__('updating...')
             this.__log__('getting code...')
             var CODE = this.__getcode__(VERSION)
             this.__log__('got code:')
             this.__log__(CODE)
-            return "True"
+            return true
         } else{
-            return "False"
+            return false
         }
     }
 }
-let jm5 = new __jm5__();
