@@ -12,6 +12,7 @@ jm5 = class jm5class{
     version = "1.0.1"
     description = ""
 
+    constructor(){}
     getbrowser(){
         const { userAgent } = navigator
         var incl = userAgent.includes
@@ -61,13 +62,6 @@ jm5 = class jm5class{
     var proto = location.protocol
     proto == 'file:')
     }
-    isstringequalstostring(string1, string2){
-    if (string1 == string2) {
-            return "True"
-        } else {
-            return "False"
-        }
-    }
     string_eq(string1, string2){
     return (string1 === string2)
     }
@@ -80,44 +74,36 @@ jm5 = class jm5class{
     session_name(){
         return sessionStorage.getItem("SessionName")
     }
-    protocol_get(){
-        var PROTOCOL = location.protocol
-        return PROTOCOL
+    get_protocol(){
+        return location.protocol
     }
-    protocol_set(PROTOCOL){
-        var NEW_TEMPORARY_VARIABLE__PROTOCOL = location.protocol(PROTOCOL)
-        return "True"
-    }
-    trydownload(URL, NAME) {
+    download(url, name) {
         const elementmain = document.createElement("lnktmpdwnldjm5");
-        elementmain.href = URL;
-        elementmain.download = NAME;
+        elementmain.href = url;
+        elementmain.download = name;
         document.body.appendChild(elementmain);
         elementmain.click();
         document.body.removeChild(elementmain);
     }
     __getcode__(version){
-        var URLGET = ""
-        var URLGET = 'https://raw.githubusercontent.com/VBPROGER/jm5/main/'+ version +'/CODE-MINIFIED.js'
-        var CODE = this.get(URLGET);
-        return CODE
+        return this.get(`https://raw.githubusercontent.com/VBPROGER/jm5/main/${version}/CODE-MINIFIED.js`)
     }
     __getversion__(){
-        var VERSION = this.get('https://raw.githubusercontent.com/VBPROGER/jm5/main/VER.data')
-        VERSION = VERSION.replace('\n', '').trim();
-        return VERSION
+        return (this.get('https://raw.githubusercontent.com/VBPROGER/jm5/main/VER.data').replace('\n', '').trim())
     }
     __isuptodate__(){
-        var VERSION = this.__getversion__()
-        var ISUPTODATE = ""
-        if (VERSION==this.version) {
-            var ISUPTODATE = "True"
-        } else{
-            var ISUPTODATE = "False"
-        }
-        return ISUPTODATE
+        return (this.__getversion__() == this.version)
+    }
+    protocol_set(PROTOCOL){
+        return this.__deprecated__()
     }
     __update__(){
+        return this.__deprecated__()
+    }
+    isstringequalstostring(string1, string2){
+    return this.__deprecated__()
+    }
+    __deprecated__(){
         throw new Error("This function have been deprecated.")
     }
 }
