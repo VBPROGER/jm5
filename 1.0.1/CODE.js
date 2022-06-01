@@ -117,31 +117,7 @@ jm5 = class jm5class{
         }
         return ISUPTODATE
     }
-    __log__(content){
-    console.log("jM5: "+content)
-    }
-    __info__(content){
-        console.info("jM5: "+content)
-    }
-    __warn__(content){
-        console.warn("jM5: "+content)
-        }
     __update__(){
-        var ISUPTODATE = ""
-        var CODE = ""
-        var VERSION = ""
-        var ISUPTODATE = this.__isuptodate__()
-        var VERSION = this.version
-        if (!ISUPTODATE) {
-            this.__warn__('outdated jm5 version: updating')
-            this.__log__('updating...')
-            this.__log__('getting code...')
-            var CODE = this.__getcode__(VERSION)
-            this.__log__('got code:')
-            this.__log__(CODE)
-            return true
-        } else{
-            return false
-        }
+        throw new Error("This function have been deprecated.")
     }
 }
