@@ -9,43 +9,38 @@
 class __jm5__{
 
     name = "jM5"
-    version = "1.0.0"
+    version = "1.0.1"
     description = ""
 
     getbrowser(){
         const { userAgent } = navigator
-        var browser = ""
-        if (userAgent.includes('Firefox/')) {
-            var browser = "Firefox"
-        } else if (userAgent.includes('Edg/')) {
-            var browser = "Edge"
-        } else if (userAgent.includes('Chrome/')) {
-            var browser = "Google Chrome"
-        } else if (userAgent.includes('Safari/')) {
-            var browser = "Safari"
+        var incl = userAgent.includes
+        if (incl('Firefox/')) {
+            return 'firefox'
+        } else if (incl('Edg/')) {
+            return 'edge'
+        } else if (incl('Chrome/')) {
+            return 'chrome'
+        } else if (incl('Safari/')) {
+            return 'safari'
         } else {
-            var browser = "undefined"
+            return undefined
         }
-        return browser
     }
     getbrowserversion() {
-        var version = ""
-        var browser = ""
         const { userAgent } = navigator
-        if (userAgent.includes('Firefox/')) {
-            var browser = `${userAgent.split('Firefox/')[1]}`
-        } else if (userAgent.includes('Edg/')) {
-            var browser = `${userAgent.split('Edg/')[1]}`
-        } else if (userAgent.includes('Chrome/')) {
-            var browser = `${userAgent.split('Chrome/')[1]}`
-        } else if (userAgent.includes('Safari/')) {
-            var browser = `${userAgent.split('Safari/')[1]}`
+        var incl = userAgent.includes
+        if (incl('Firefox/')) {
+            return userAgent.split('Firefox/')[1]
+        } else if (incl('Edg/')) {
+            return userAgent.split('Edg/')[1]
+        } else if (incl('Chrome/')) {
+            return userAgent.split('Chrome/')[1]
+        } else if (incl('Safari/')) {
+            return userAgent.split('Safari/')[1]
         } else {
-            var browser = "undefined"
-            var version = "undefined"
+            return undefined
         }
-        version = browser
-        return version
     }
     get(requestURL){
     var xmlHttp = new XMLHttpRequest();
